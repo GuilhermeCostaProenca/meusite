@@ -1,18 +1,13 @@
-# 📄 Decisões Técnicas – Tailwind Template
+# 📋 Decisões do Projeto "meusite"
 
-## 🧱 Stack escolhida
+## 15/04/2025 – Estrutura inicial
+- Baseado no template `tailwind-template-guilherme`
+- Utilizado Tailwind CSS com Vite
+- CSS separado em `src/css/style.css`
+- HTML principal movido para `public/index.html`
+- ScrollReveal ativado via `main.js`
 
-- HTML puro para leveza e controle total
-- Tailwind CSS para produtividade e responsividade
-- Estrutura simples, mas pronta para escalar
-
-## 🎯 Objetivo
-
-- Criar landing pages, sites estáticos ou MVPs visuais com velocidade
-- Reutilizar a estrutura para múltiplos projetos
-- Evitar React quando não é necessário
-
-## 🔮 Futuro
-
-- Adicionar versão com Alpine.js para interações leves
-- Criar exemplos visuais (buttons, hero, cards)
+## 16/04/2025 – Planejamento de deploy
+- Decidido usar GitHub Pages
+- Adicionado `deploy.yml` no GitHub Actions
+- Estrutura de `dist/` será usada para publicação

@@ -1,138 +1,51 @@
-# 💨 Tailwind Template – Guilherme.Dev
+// README.md
 
-Template minimalista com **HTML + Tailwind CSS**, pronto para projetos simples, landing pages e protótipos rápidos — com organização de código e estrutura profissional.
+# Guilherme.Dev – Soluções Digitais
 
----
+Site institucional moderno, criado com Vite + Tailwind CSS, com foco em conversão, visual impactante e estrutura profissional.
 
 ## 🚀 Tecnologias
 
-- [x] HTML5  
-- [x] Tailwind CSS 3.x  
-- [x] PostCSS  
-- [x] Estrutura modular de arquivos  
-- [x] Scripts automatizados  
-- [x] Git Flow e versionamento semântico  
-- [x] Commitizen com Husky configurado  
-- [x] GitHub Actions com CI básico configurado
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ScrollReveal](https://scrollrevealjs.org/)
+- [Phosphor Icons](https://phosphoricons.com/)
 
----
+## 💻 Como rodar localmente
+
+```bash
+git clone https://github.com/GuilhermeCostaProenca/meusite.git
+cd meusite
+npm install
+npm run dev
+```
+
+Acesse: [http://localhost:5173](http://localhost:5173)
 
 ## 📁 Estrutura
 
 ```
-tailwind-template-guilherme/
-├── .config/
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-│   └── gitmessage.txt
-├── .husky/
-│   └── pre-commit
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
+📁 .config/               # Arquivos de configuração (ex: tailwind)
+📁 .github/               # Workflow de deploy (GitHub Actions)
+📁 public/                # index.html principal
+📁 src/
 │   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── img/
-├── public/
-│   └── index.html
-├── docs/
-│   └── decisoes.md
-├── .gitignore
-├── .gitattributes (opcional)
-├── CHANGELOG.md
-├── LICENSE
-├── README.md
-├── package.json
-└── package-lock.json
+│   │   └── style.css     # Estilo principal do Tailwind
+│   └── main.js           # ScrollReveal e lógica leve
+📄 package.json           # Scripts e dependências
+📄 README.md              # Este arquivo
+📄 CHANGES.md             # Histórico de versões
+📄 vite.config.js         # Configuração do Vite
+📄 postcss.config.js      # Configuração do PostCSS
 ```
 
----
+## 📱 Responsivo?
 
-## ⚙️ Scripts
+Sim! Layout mobile-first, adaptado para smartphones, tablets e desktops.
 
-```bash
-npm install       # Instala dependências e ativa Husky
-npm run build     # Gera o CSS final minificado em ./dist
-npm run dev       # Modo de desenvolvimento com hot reload
-npm run commit    # Abre menu interativo para padronizar commits
-```
+## 📬 Contato
 
-> ⚠️ Commits devem ser feitos sempre com `npm run commit`, pois o Husky bloqueia commits manuais
+Desenvolvido por **Guilherme Proença**
 
----
-
-## 🔀 Git Flow (Padrão Profissional)
-
-Este template utiliza **Git Flow**, com as seguintes branches:
-
-- `main` → versão estável, releases com tag (`v0.1.0`, `v1.0.0`...)
-- `develop` → desenvolvimento contínuo
-- `feature/nome` → novas funcionalidades
-- `release/vX.X.X` → preparação de nova versão
-- `hotfix/nome` → correções emergenciais
-
-### Primeiros passos para clonar e começar:
-
-```bash
-git clone https://github.com/SEU_USUARIO/tailwind-template-guilherme.git
-cd tailwind-template-guilherme
-npm install
-
-# Configure o modelo de commit (local)
-git config commit.template .config/gitmessage.txt
-
-# Crie sua branch de funcionalidade
-git checkout -b feature/nova-pagina
-```
-
----
-
-## 📋 Histórico de mudanças
-
-Veja em [CHANGELOG.md](./CHANGELOG.md)
-
----
-
-## 🧠 Sobre
-
-Criado por [Guilherme Costa Proença](https://github.com/GuilhermeCostaProenca)  
-Distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
----
-
-## 📝 Modelo de Commit – `.config/gitmessage.txt`
-
-```
-feat(scope): mensagem curta
-
-# Explicação mais detalhada (opcional)
-#
-# Tipos:
-# feat     → nova funcionalidade
-# fix      → correção de bug
-# docs     → mudanças na documentação
-# style    → formatação, CSS, espaço, vírgula
-# refactor → refatoração sem alterar funcionalidade
-# chore    → tarefas internas, config, setup
-```
-
-Para ativar o modelo de commit localmente:
-
-```bash
-git config commit.template .config/gitmessage.txt
-```
-
----
-
-## ✅ Status de boas práticas
-
-- [x] Husky instalado com prepare automático
-- [x] Hook `pre-commit` funcionando e testado
-- [x] Commitizen configurado via `cz`
-- [x] Script de commit adicionado: `npm run commit`
-- [x] Commits com padrão feitos e registrados
-- [x] Script `test` simbólico para CI ativo
-- [x] GitHub Actions implementado com CI de instalação e build
+- [LinkedIn](https://www.linkedin.com/in/guilhermecostaproenca/)
+- WhatsApp: botão direto no site
