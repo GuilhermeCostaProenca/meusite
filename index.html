@@ -5,123 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guilherme.Dev | Soluções Digitais</title>
     <link rel="stylesheet" href="/src/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
 
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        overflow-x: hidden;
+      }
+      /* animated rotating radial background */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -50%; left: -50%;
+        width: 200%; height: 200%;
+        background: radial-gradient(circle at center, #03111d 0%, #000000 70%);
+        animation: rotate-bg 30s linear infinite;
+        z-index: -10;
+      }
+      @keyframes rotate-bg {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      /* shake animation horizontal */
+      .animate-shake-custom {
+        animation: shake-custom 1.2s infinite;
+      }
+      @keyframes shake-custom {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        50% { transform: translateX(4px); }
+        75% { transform: translateX(-4px); }
+      }
+      /* shine text effect */
+      .shine {
+        background: linear-gradient(135deg, #ffffff 30%, #aaaaaa 50%, #ffffff 70%);
+        background-size: 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 2s infinite linear;
+      }
+      @keyframes shine {
+        0% { background-position: 0%; }
+        100% { background-position: 200%; }
+      }
+      /* navbar overlay blur */
+      header {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; z-index: 50;
+      }
+      .navbar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1.5rem;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 9999px;
+      }
+      .navbar-links a {
+        margin: 0 1rem;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .navbar-links a:hover {
+        color: #fff;
+      }
+      /* hero */
+      #inicio {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem 1rem;
+        position: relative;
+      }
+      .logo-overlay {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -55%) scale(1.1);
+        width: 130px; height: 130px;
+        z-index: 10;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+      .signature {
+        position: absolute;
+        right: 5%; bottom: 10%;
+        width: 120px;
+        animation: shake-custom 3s infinite;
+      }
+    </style>
   </head>
-  <body class="bg-[#0d0d0d] text-white font-[Poppins]">
+  <body class="text-white font-[Poppins]">
 
-    <!-- Hero Section com decoração -->
-    <section class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
-      <!-- Fundo decorativo -->
-      <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-r from-purple-700 via-pink-500 to-red-500 opacity-20 rounded-full blur-3xl z-0 animate-pulse"></div>
-      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#00ffc8]/20 blur-2xl rounded-full z-0"></div>
+    <!-- Navbar -->
+    <header>
+      <div class="navbar-container">
+        <div class="flex items-center gap-3">
+          <img src="https://avatars.githubusercontent.com/u/120469543?v=4" alt="Foto Guilherme" class="w-8 h-8 rounded-full border border-white/20" />
+          <span class="text-white font-bold text-base tracking-wide">Guilherme.Dev</span>
+        </div>
+        <nav class="navbar-links hidden md:flex">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#blog">Blog</a>
+        </nav>
+        <a href="#contato" class="hidden md:inline-block px-5 py-2 border border-white/20 rounded-full text-sm text-white/80 hover:text-white hover:border-white transition animate-shake-custom">
+          Vamos conversar
+        </a>
+      </div>
+    </header>
 
-      <div class="max-w-3xl z-10">
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-[#00f9ff] via-[#00ffc8] to-[#00b386] text-transparent bg-clip-text animate-fade-in">
-          Transformo ideias em soluções digitais reais
+    <!-- Hero Section -->
+    <section id="inicio">
+      <h2 class="text-[#00b3ff] text-sm uppercase tracking-widest mb-4">Design em Detalhes</h2>
+      <div class="relative inline-block">
+        <h1 class="text-[8rem] md:text-[12rem] font-black tracking-tight leading-none select-none">
+          PORT<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00eaff] to-[#ffffff66]">F</span>OLIO
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 mt-6 animate-fade-in delay-200">
-          Sites modernos, sistemas sob medida, automações e painéis de dados para negócios que querem crescer.
-        </p>
-        <a href="#servicos" class="inline-block mt-8 px-8 py-3 bg-[#00ffc8] text-black rounded-md font-semibold hover:bg-[#00b386] shadow-lg transition animate-fade-in delay-300">
-          Conheça meus serviços
-        </a>
+        <!-- SVG floating decoration -->
+        <img src="https://www.svgrepo.com/show/514149/3d.svg" alt="Decoração animada" class="logo-overlay" />
+        <!-- signature -->
+        <img src="/src/assets/signature.svg" alt="Assinatura Guilherme" class="signature" />
       </div>
     </section>
-
-        <!-- Sobre Mim com fundo decorativo -->
-        <section id="sobre" class="relative py-32 px-6 bg-[#121218] overflow-hidden">
-          <div class="absolute -top-20 right-0 w-[400px] h-[400px] bg-pink-600 opacity-20 blur-3xl rounded-full"></div>
-          <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600 opacity-10 blur-2xl rounded-full"></div>
-    
-          <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 z-10 relative">
-            <div class="md:w-1/2 text-center md:text-left" data-sr>
-              <h2 class="text-3xl md:text-4xl font-bold mb-6">Quem sou eu</h2>
-              <p class="text-gray-300 leading-relaxed mb-6">
-                Me chamo Guilherme Proença, desenvolvedor e estrategista digital. Crio experiências reais para empresas que querem sair do amadorismo e se posicionar com força no digital.
-              </p>
-              <ul class="text-sm text-gray-400 space-y-2">
-                <li>✅ Experiência com projetos reais (You.On)</li>
-                <li>✅ Foco em design responsivo e conversão</li>
-                <li>✅ Domínio em sites, landing pages e dashboards</li>
-                <li>✅ Soluções sob medida com visão de negócio</li>
-              </ul>
-            </div>
-            <div class="md:w-1/2" data-sr>
-              <img src="https://images.unsplash.com/photo-1603415526960-f7e0328f6b1b" alt="Foto Guilherme" class="rounded-full w-64 h-64 mx-auto shadow-2xl object-cover border-4 border-[#00ffc8]">
-            </div>
-          </div>
-        </section>
-        
-        <!-- Serviços redesenhados -->
-    <section id="servicos" class="relative py-32 px-6 bg-[#0d0d0d]">
-      <div class="absolute -top-10 left-10 w-[300px] h-[300px] bg-indigo-500 opacity-10 blur-2xl rounded-full"></div>
-      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-rose-500 opacity-10 blur-3xl rounded-full"></div>
-
-      <div class="max-w-6xl mx-auto text-center relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12" data-sr>Serviços que entregam resultado</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10" data-sr>
-          <div class="bg-[#121218] p-8 rounded-2xl shadow-2xl hover:scale-[1.03] transition-all duration-300">
-            <img src="https://cdn-icons-png.flaticon.com/512/4285/4285537.png" alt="Landing Page" class="w-14 h-14 mb-4 mx-auto" />
-            <h3 class="text-xl font-semibold mb-2">Landing Pages</h3>
-            <p class="text-gray-400 text-sm">Alta conversão com design estratégico. Ideal para vendas e geração de leads com tráfego pago.</p>
-          </div>
-
-          <div class="bg-[#121218] p-8 rounded-2xl shadow-2xl hover:scale-[1.03] transition-all duration-300">
-            <img src="https://cdn-icons-png.flaticon.com/512/4285/4285531.png" alt="Site Profissional" class="w-14 h-14 mb-4 mx-auto" />
-            <h3 class="text-xl font-semibold mb-2">Sites Profissionais</h3>
-            <p class="text-gray-400 text-sm">Sites institucionais modernos, rápidos e com visual impecável. Perfeitos para negócios que querem presença forte.</p>
-          </div>
-
-          <div class="bg-[#121218] p-8 rounded-2xl shadow-2xl hover:scale-[1.03] transition-all duration-300">
-            <img src="https://cdn-icons-png.flaticon.com/512/5948/5948531.png" alt="Dashboard" class="w-14 h-14 mb-4 mx-auto" />
-            <h3 class="text-xl font-semibold mb-2">Dashboards Personalizados</h3>
-            <p class="text-gray-400 text-sm">Controle visual de dados, com gráficos, relatórios e insights automatizados. Ideal para decisões rápidas e certeiras.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato" class="relative py-32 px-6 bg-[#121218] overflow-hidden">
-      <div class="absolute -top-20 left-0 w-[400px] h-[400px] bg-emerald-500 opacity-20 blur-3xl rounded-full"></div>
-      <div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-600 opacity-10 blur-2xl rounded-full"></div>
-
-      <div class="max-w-3xl mx-auto text-center relative z-10" data-sr>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronto para transformar seu negócio?</h2>
-        <p class="text-gray-300 mb-8">Entre em contato agora e vamos criar uma solução digital sob medida para você.</p>
-        <a href="https://wa.me/5599999999999" target="_blank" class="inline-block bg-[#00ffc8] text-black px-8 py-4 rounded-md font-bold hover:bg-[#00b386] transition mb-10 shadow-lg">
-          Falar no WhatsApp
-        </a>
-
-        <form class="bg-[#1a1a2e] p-8 rounded-xl shadow-xl space-y-4">
-          <input type="text" placeholder="Seu nome" class="w-full p-3 rounded bg-[#2d2d3f] text-white placeholder-gray-400" />
-          <input type="email" placeholder="Seu e-mail" class="w-full p-3 rounded bg-[#2d2d3f] text-white placeholder-gray-400" />
-          <textarea placeholder="Mensagem" rows="4" class="w-full p-3 rounded bg-[#2d2d3f] text-white placeholder-gray-400"></textarea>
-          <button type="submit" class="w-full bg-[#00ffc8] text-black py-3 rounded font-semibold hover:bg-[#00d6a6] transition">
-            Enviar mensagem
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <footer class="bg-[#0d0d0d] py-10 px-6 text-center text-gray-400 border-t border-white/10">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <p class="text-sm">© 2025 Guilherme.Dev — Todos os direitos reservados.</p>
-        <div class="flex gap-6 text-xl">
-          <a href="#" class="hover:text-white transition" aria-label="Instagram">
-            <i class="ph ph-instagram-logo"></i>
-          </a>
-          <a href="#" class="hover:text-white transition" aria-label="LinkedIn">
-            <i class="ph ph-linkedin-logo"></i>
-          </a>
-          <a href="#" class="hover:text-white transition" aria-label="GitHub">
-            <i class="ph ph-github-logo"></i>
-          </a>
-        </div>
-      </div>
-    </footer>
-
 
     <script type="module" src="/src/main.js"></script>
   </body>
